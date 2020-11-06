@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,9 @@ Route::get('/', function () {
 })->name('landing');
 
 Auth::routes();
+
+Route::get('login/github', [LoginController::class, 'redirectToProvider'])->name('login.github');
+Route::get('login/github/callback', [LoginController::class, 'handleProviderCallback'])->name('login.github.callback');
 
 Route::resource('repos', 'RepoController');
 

@@ -31,8 +31,8 @@
 
                                 @error('email')
                                 <span class="invalid-feedback" style="display: block">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
 
@@ -50,10 +50,15 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mb-0 text-center">
+                            <div class="form-group text-center">
                                 <button class="btn btn-primary" type="submit"> {{ __('Log In') }} </button>
                             </div>
 
+                            <div class="form-group mb-0 text-center">
+                                <a class="btn-auth btn-github " href="{{ route('login.github') }}">
+                                    Sign in with <b>Github</b>
+                                </a>
+                            </div>
 
                         </form>
                     </div> <!-- end card-body -->
@@ -63,7 +68,8 @@
                 <div class="row mt-3">
                     <div class="col-12 text-center">
                         <p class="text-muted">Don't have an account? <a href="{{ route('register') }}"
-                                                                        class="text-muted ml-1"><b>Sign Up</b></a></p>
+                                                                        class="text-muted ml-1"><b>Sign Up</b></a>
+                        </p>
                     </div> <!-- end col -->
                 </div>
                 <!-- end row -->

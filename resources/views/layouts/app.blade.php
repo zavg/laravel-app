@@ -16,6 +16,7 @@
     <!-- Styles -->
     <link href="/css/icons.min.css" rel="stylesheet">
     <link href="/css/app.min.css" rel="stylesheet">
+    <link href="/css/auth-buttons.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="images/favicon.ico">
 
