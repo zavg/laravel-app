@@ -27,7 +27,8 @@
                         @if(!$repos->isEmpty())
                             <h4 class="header-title">List of github repositories</h4>
                             <p class="text-muted font-14">
-                                <!--Add <code>.table-hover</code> to enable a hover state on table rows within a <code>&lt;tbody&gt;</code>.-->
+                                If some repos are in "waiting" state, then please wait and refresh the page manually.<br/>
+                                For huge repos it could take a long time.
                             </p>
                             <div class="table-responsive-sm">
                                 <table class="table table-hover table-centered mb-0">
@@ -44,9 +45,19 @@
                                         <tr style="cursor:pointer"
                                             onclick="location.href='{{ route('repos.show', ['repo' => $repo->id]) }}'">
                                             <td>{{ $repo->url }}</td>
-                                            <td>?</td>
-                                            <td>?</td>
-                                            <td><i class="mdi mdi-circle text-success"></i> Ready</td>
+                                            <td>{{ $repo->files }}</td>
+                                            <td>{{ $repo->lines }}</td>
+                                            <td>
+                                                @switch($repo->status)
+                                                    @case('ready')
+                                                    <i class="mdi mdi-circle text-success"></i> Ready
+                                                    @break
+
+                                                    @default
+                                                    <i class="mdi mdi-circle text-warning"></i> Waiting...
+                                                @endswitch
+
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

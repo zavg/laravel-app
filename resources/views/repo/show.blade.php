@@ -25,15 +25,17 @@
                             <div class="col-sm-8">
                                 <div class="media">
                                     <div class="media-body">
-                                        <h4 class="mt-1 mb-1 text-white"> {{ $repo->url }}</h4>
+                                        <a href="{{ $repo->url }}" target="_blank">
+                                            <h4 class="mt-1 mb-1 text-white"> {{ $repo->url }} </h4>
+                                        </a>
 
                                         <ul class="mb-0 list-inline text-light">
                                             <li class="list-inline-item mr-3">
-                                                <h5 class="mb-1">100</h5>
+                                                <h5 class="mb-1">{{ $repo->files }}</h5>
                                                 <p class="mb-0 font-13 text-white-50">Total files</p>
                                             </li>
                                             <li class="list-inline-item">
-                                                <h5 class="mb-1">54</h5>
+                                                <h5 class="mb-1">{{ $repo->lines }}</h5>
                                                 <p class="mb-0 font-13 text-white-50">Total lines</p>
                                             </li>
                                         </ul>
@@ -59,7 +61,7 @@
 
                                         {{ method_field('DELETE') }}
 
-                                        <button  class="btn btn-light" type="submit">
+                                        <button class="btn btn-light" type="submit">
                                             <i class="mdi mdi-delete mr-1"></i> Delete
                                         </button>
                                     </form>
@@ -75,15 +77,27 @@
         <!-- end row -->
 
 
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card">
-                    <div class="card-body">
-                    </div> <!-- end card body-->
-                </div> <!-- end card -->
-            </div><!-- end col-->
-        </div>
-        <!-- end row-->
+        @if(!$files->isEmpty())
+            <h4 class="header-title">List of files</h4>
+            <div class="table-responsive-sm">
+                <table class="table table-striped table-centered mb-0">
+                    <thead>
+                    <tr>
+                        <th>File</th>
+                        <th>Lines</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($files as $file)
+                        <tr>
+                            <td>{{ $file->path }}</td>
+                            <td>{{ $file->lines }}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div> <!-- end table-responsive-->
+        @endif
 
     </div> <!-- container -->
 @endsection

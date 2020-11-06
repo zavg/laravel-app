@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Repo;
+use App\File;
 use App\Jobs\ProcessGithubRepo;
 use Illuminate\Http\Request;
 
@@ -78,7 +79,9 @@ class RepoController extends Controller
     {
         $repo = Repo::find($id);
 
-        return view("repo.show", compact('repo'));
+        $files = File::where('repo_id', $repo->id)->orderBy('lines', 'DESC')->get();
+
+        return view("repo.show", compact('repo', 'files'));
     }
 
     /**
