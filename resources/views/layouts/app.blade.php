@@ -14,12 +14,13 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="css/icons.min.css" rel="stylesheet">
-    <link href="css/app.min.css" rel="stylesheet">
+    <link href="/css/icons.min.css" rel="stylesheet">
+    <link href="/css/app.min.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="images/favicon.ico">
 
 </head>
 
 @yield('content')
+
 </html>

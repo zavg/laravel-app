@@ -16,7 +16,7 @@ class CreateReposTable extends Migration
         Schema::create('repos', function (Blueprint $table) {
             $table->id();
             $table->string('url');
-            $table->text('comment');
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }
