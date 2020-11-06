@@ -33,7 +33,8 @@ class ProcessGithubRepo implements ShouldQueue
     function isBlackListed($path)
     {
         $blackList = [
-            "/.git/", "/deps/", "/vendor/", "/.idea/", "png", "jpeg", "jpg", "woff", "eot", "css", "ttf", "svg"
+            "/.git/", "/deps/", "/vendor/", "/.idea/", "png", "jpeg", "jpg", "woff", "eot", "css", "ttf", "svg",
+            'mp3', "wav"
         ];
 
         foreach ($blackList as $entry)
