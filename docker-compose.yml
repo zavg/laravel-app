@@ -6,7 +6,6 @@ services:
         build:
             context: .
             dockerfile: php.Dockerfile
-        image: digitalocean.com/php
         container_name: app
         restart: unless-stopped
         tty: true
@@ -18,7 +17,7 @@ services:
             - ./:/var/www
             - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
 
-    # nginx service
+  # nginx service
     webserver:
         image: nginx:alpine
         container_name: webserver
