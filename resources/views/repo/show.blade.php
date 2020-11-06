@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Repository info</h4>
+                    <h4 class="page-title">{{ __('Repository info') }}</h4>
                 </div>
             </div>
         </div>
@@ -32,16 +32,16 @@
                                         <ul class="mb-0 list-inline text-light">
                                             <li class="list-inline-item mr-3">
                                                 <h5 class="mb-1">{{ $repo->files }}</h5>
-                                                <p class="mb-0 font-13 text-white-50">Total files</p>
+                                                <p class="mb-0 font-13 text-white-50">{{ __('Total files') }}</p>
                                             </li>
                                             <li class="list-inline-item">
                                                 <h5 class="mb-1">{{ $repo->lines }}</h5>
-                                                <p class="mb-0 font-13 text-white-50">Total lines</p>
+                                                <p class="mb-0 font-13 text-white-50">{{ __('Total lines') }}</p>
                                             </li>
                                         </ul>
 
                                         @if( !empty( $repo->comment))
-                                            <br/><br/><p class="font-15 text-white">Comment: {{ $repo->comment }}</p>
+                                            <br/><br/><p class="font-15 text-white">{{ __('Comment') }}: {{ $repo->comment }}</p>
                                         @endif
                                     </div> <!-- end media-body-->
                                 </div>
@@ -51,7 +51,7 @@
                                 <div class="text-center mt-sm-0 mt-3 text-sm-right">
                                     <button type="button" class="btn btn-light"
                                             onclick="location.href='{{ route('repos.edit', ['repo' => $repo->id]) }}'">
-                                        <i class="mdi mdi-file-edit-outline mr-1"></i> Edit
+                                        <i class="mdi mdi-file-edit-outline mr-1"></i> {{ __('Edit') }}
                                     </button>
                                     <!-- item-->
 
@@ -62,7 +62,7 @@
                                         {{ method_field('DELETE') }}
 
                                         <button class="btn btn-light" type="submit">
-                                            <i class="mdi mdi-delete mr-1"></i> Delete
+                                            <i class="mdi mdi-delete mr-1"></i> {{ __('Delete') }}
                                         </button>
                                     </form>
 
@@ -78,13 +78,13 @@
 
 
         @if(!$files->isEmpty())
-            <h4 class="header-title">List of files</h4>
+            <h4 class="header-title">{{ __('List of files') }}</h4>
             <div class="table-responsive-sm">
                 <table class="table table-striped table-centered mb-0">
                     <thead>
                     <tr>
-                        <th>File</th>
-                        <th>Lines</th>
+                        <th>{{ __('File') }}</th>
+                        <th>{{ __('Lines') }}</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Add Github repo</h4>
+                    <h4 class="page-title">{{ __('Add Github repo') }}</h4>
                 </div>
             </div>
         </div>
@@ -18,15 +18,15 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">Add repository</h4>
-                        <p class="text-muted font-14">Please enter the URL to repo and optional comment.
+                        <h4 class="header-title">{{ __('Add repository') }}</h4>
+                        <p class="text-muted font-14">{{ __('Please enter the URL to repo and optional comment.') }}
                         </p>
 
                         <form method="POST" action="{{ route('repos.store') }}">
                             @csrf
 
                             <div class="form-group mb-3">
-                                <label>Repo URL (format: https://github.com/username/reponame)</label>
+                                <label>{{ __('Repo URL') }} ({{ __('format') }}: https://github.com/username/reponame)</label>
                                 <input type="text" class="form-control" name="url"
                                        placeholder="https://github.com/laravel/laravel" required>
 
@@ -39,10 +39,10 @@
 
 
                             <div class="form-group mb-3">
-                                <label>Comment (optional)</label>
+                                <label>{{ __('Comment') }} (optional)</label>
                                 <textarea class="form-control" id="comment-textarea" name="comment" rows="5"></textarea>
                             </div>
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="btn btn-primary" type="submit">{{ __('Submit') }}</button>
                         </form>
                     </div> <!-- end tab-content-->
 

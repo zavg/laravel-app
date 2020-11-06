@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">My repos</h4>
+                    <h4 class="page-title">{{ __('My repos') }}</h4>
                 </div>
             </div>
         </div>
@@ -25,19 +25,19 @@
                         <br/><br/><br/>
 
                         @if(!$repos->isEmpty())
-                            <h4 class="header-title">List of github repositories</h4>
+                            <h4 class="header-title">{{ __('List of github repositories') }}</h4>
                             <p class="text-muted font-14">
-                                If some repos are in "waiting" state, then please wait and refresh the page manually.<br/>
-                                For huge repos it could take a long time.
+                                {{ __('If some repositories are in a "waiting" state, then please wait and refresh the page manually.') }}<br/>
+                                {{ __('For huge repositories, it could take a long time.') }}
                             </p>
                             <div class="table-responsive-sm">
                                 <table class="table table-hover table-centered mb-0">
                                     <thead>
                                     <tr>
-                                        <th>Repository</th>
-                                        <th>Files</th>
-                                        <th>Lines</th>
-                                        <th>Status</th>
+                                        <th>{{ __('Repository') }}</th>
+                                        <th>{{ __('Files') }}</th>
+                                        <th>{{ __('Lines') }}</th>
+                                        <th>{{ __('Status') }}  </th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -50,11 +50,11 @@
                                             <td>
                                                 @switch($repo->status)
                                                     @case('ready')
-                                                    <i class="mdi mdi-circle text-success"></i> Ready
+                                                    <i class="mdi mdi-circle text-success"></i> {{ __('Ready') }}
                                                     @break
 
                                                     @default
-                                                    <i class="mdi mdi-circle text-warning"></i> Waiting...
+                                                    <i class="mdi mdi-circle text-warning"></i> {{ __('Waiting') }}...
                                                 @endswitch
 
                                             </td>

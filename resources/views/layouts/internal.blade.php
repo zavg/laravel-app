@@ -38,7 +38,7 @@
                     <li class="side-nav-item">
                         <a href="{{  route('home') }}" class="side-nav-link">
                             <i class="uil-layer-group"></i>
-                            <span> My repos </span>
+                            <span> {{ __('My repos') }} </span>
                         </a>
                     </li>
                 </ul>
@@ -84,7 +84,7 @@
                                 <a href="{{ route('logout') }}" class="dropdown-item notify-item"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="mdi mdi-logout mr-1"></i>
-                                    <span>Logout</span>
+                                    <span>{{ __('Logout') }}</span>
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -116,7 +116,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-right footer-links d-none d-md-block">
-                                <a href="{{ route('landing') }}">Go to landing</a>
+                                <a href="{{ route('landing') }}">{{ __('Go to landing') }}</a>
                             </div>
                         </div>
                     </div>
